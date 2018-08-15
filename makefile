@@ -9,7 +9,8 @@ clone:
 	git clone https://github.com/clasp-developers/usocket.git ../usocket
 	git clone https://github.com/clasp-developers/uuid.git ../uuid
 	git clone https://github.com/drmeister/cl-jupyter.git ../cl-jupyter
-	git clone https://github.com/clasp-developers/cl-jupyter-widgets.git ../cl-jupyter-widgets
+	git clone https://github.com/clasp-developers/cl-ipykernel.git ../cl-ipykernel
+	git clone https://github.com/clasp-developers/cl-ipywidgets.git ../cl-ipywidgets
 	git clone https://github.com/clasp-developers/cl-nglview.git ../cl-nglview
 	git clone https://github.com/clasp-developers/cl-bqplot.git ../cl-bqplot
 
