@@ -1,18 +1,18 @@
 
 
 clone:
-	git clone https://github.com/clasp-developers/trivial-garbage.git ../trivial-garbage
-	git clone https://github.com/clasp-developers/bordeaux-threads.git ../bordeaux-threads
-	git clone https://github.com/clasp-developers/cffi.git ../cffi
-	git clone https://github.com/clasp-developers/cl-fad.git ../cl-fad
-	git clone https://github.com/clasp-developers/trivial-gray-streams.git ../trivial-gray-streams
-	git clone https://github.com/clasp-developers/usocket.git ../usocket
-	git clone https://github.com/clasp-developers/uuid.git ../uuid
-	git clone https://github.com/drmeister/cl-jupyter.git ../cl-jupyter
-	git clone https://github.com/clasp-developers/cl-ipykernel.git ../cl-ipykernel
-	git clone https://github.com/clasp-developers/cl-ipywidgets.git ../cl-ipywidgets
-	git clone https://github.com/clasp-developers/cl-nglview.git ../cl-nglview
-	git clone https://github.com/clasp-developers/cl-bqplot.git ../cl-bqplot
-	git clone https://github.com/clasp-developers/trivial-backtrace.git ../trivial-backtrace.git
+	./fetch-git-revision.sh ../trivial-garbage https://github.com/clasp-developers/trivial-garbage.git
+	./fetch-git-revision.sh ../bordeaux-threads https://github.com/clasp-developers/bordeaux-threads.git
+	./fetch-git-revision.sh ../cffi https://github.com/clasp-developers/cffi.git
+	./fetch-git-revision.sh ../cl-fad https://github.com/clasp-developers/cl-fad.git
+	./fetch-git-revision.sh ../trivial-gray-streams https://github.com/clasp-developers/trivial-gray-streams.git
+	./fetch-git-revision.sh ../usocket https://github.com/clasp-developers/usocket.git
+	./fetch-git-revision.sh ../uuid https://github.com/clasp-developers/uuid.git
+	./fetch-git-revision.sh ../cl-jupyter https://github.com/drmeister/cl-jupyter.git
+	./fetch-git-revision.sh ../cl-ipykernel https://github.com/clasp-developers/cl-ipykernel.git
+	./fetch-git-revision.sh ../cl-ipywidgets https://github.com/clasp-developers/cl-ipywidgets.git
+	./fetch-git-revision.sh ../cl-nglview https://github.com/clasp-developers/cl-nglview.git
+	./fetch-git-revision.sh ../cl-bqplot https://github.com/clasp-developers/cl-bqplot.git
+	./fetch-git-revision.sh ../trivial-backtrace.git https://github.com/clasp-developers/trivial-backtrace.git
 
 
