@@ -13,5 +13,6 @@ clone:
 	git clone https://github.com/clasp-developers/cl-ipywidgets.git ../cl-ipywidgets
 	git clone https://github.com/clasp-developers/cl-nglview.git ../cl-nglview
 	git clone https://github.com/clasp-developers/cl-bqplot.git ../cl-bqplot
+	git clone https://github.com/clasp-developers/trivial-backtrace.git ../trivial-backtrace.git
 
 
