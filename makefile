@@ -5,7 +5,6 @@ clone:
 	./fetch-git-revision.sh ../bordeaux-threads https://github.com/clasp-developers/bordeaux-threads.git origin/master
 	./fetch-git-revision.sh ../cffi https://github.com/clasp-developers/cffi.git origin/master
 	./fetch-git-revision.sh ../cl-fad https://github.com/clasp-developers/cl-fad.git origin/master
-	./fetch-git-revision.sh ../trivial-gray-streams https://github.com/clasp-developers/trivial-gray-streams.git origin/master
 	./fetch-git-revision.sh ../usocket https://github.com/clasp-developers/usocket.git origin/master
 	./fetch-git-revision.sh ../uuid https://github.com/clasp-developers/uuid.git origin/master
 	./fetch-git-revision.sh ../cl-jupyter https://github.com/drmeister/cl-jupyter.git origin/master
