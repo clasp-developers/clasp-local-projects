@@ -1,5 +1,66 @@
 #!/bin/sh
 
+
+
+run_command ()
+{
+    if ! "$@" ; then
+        echo this failed: "$@" 1>&2
+        echo in dir `pwd` 1>&2
+        exit 1
+    fi
+}
+
+
+do_git_tree ()
+{
+    local where=$1 ; shift || return
+    local url=$1 ; shift || return
+    local branch_or_tag=${1-} # optional
+    local reponame
+
+    case "$where" in
+        */*) run_command mkdir -p ${where%/*};;
+    esac
+
+    if ! [ -d "$where" ] ; then
+        # you cannot use --branch here because it doesn't take
+        # sha256 commit ids
+        echo doing git clone "$url" "$where"
+        run_command git clone "$url" "$where"
+        if [ -n "$branch_or_tag" ] ; then
+            echo doing git checkout $branch_or_tag
+            (cd $where && run_command git checkout $branch_or_tag)
+        fi
+    else
+        (
+        cd "$where"
+        echo doing git fetch in $PWD
+        run_command git fetch
+        if [ -n "$branch_or_tag" ] ; then
+            echo doing git checkout $branch_or_tag in $PWD
+            run_command git checkout -q $branch_or_tag
+            echo doing git pull in $PWD
+            run_command git pull
+        else
+            echo doing git merge in $PWD
+            run_command git merge
+        fi
+        )
+    fi
+    (cd "$where"
+        echo HEAD in `pwd` is:
+        git rev-parse --verify HEAD
+        git log --pretty=format:'%h' -n 1
+        git status
+        git log -n 2
+    ) | cat
+}
+
+do_git_tree "$@"
+
+exit 0
+
 path=$1
 url=$2
 revision=$3
