@@ -18,6 +18,9 @@ do_git_tree ()
     local url=$1 ; shift || return
     local branch_or_tag=${1-} # optional
     local reponame
+    local pw
+
+    pw=${PWD-`pwd`}
 
     case "$where" in
         */*) run_command mkdir -p ${where%/*};;
@@ -30,10 +33,10 @@ do_git_tree ()
         run_command git clone "$url" "$where"
         if [ -n "$branch_or_tag" ] ; then
             echo doing git checkout $branch_or_tag
-            (cd $where && run_command git checkout $branch_or_tag)
+            cd $where && run_command git checkout $branch_or_tag
+            cd $pw
         fi
     else
-        (
         cd "$where"
         echo doing git fetch in $PWD
         run_command git fetch
@@ -46,7 +49,7 @@ do_git_tree ()
             echo doing git merge in $PWD
             run_command git merge
         fi
-        )
+        cd $pw
     fi
     (cd "$where"
         echo HEAD in `pwd` is:
