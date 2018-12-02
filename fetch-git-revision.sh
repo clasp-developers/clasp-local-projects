@@ -1,7 +1,5 @@
 #!/bin/sh
 
-
-
 run_command ()
 {
     if ! "$@" ; then
@@ -11,7 +9,6 @@ run_command ()
     fi
 }
 
-
 do_git_tree ()
 {
     local where=$1 ; shift || return
@@ -19,6 +16,10 @@ do_git_tree ()
     local branch_or_tag=${1-} # optional
     local reponame
     local pw
+
+    case "${branch_or_tag-}" in
+        origin/master) branch_or_tag="";; # this is not a branch
+    esac
 
     pw=${PWD-`pwd`}
 
@@ -46,10 +47,10 @@ do_git_tree ()
             echo doing git pull in $PWD
             run_command git pull
         else
-            echo doing git merge in $PWD
-            run_command git merge
+            echo doing git pull in $PWD
+            run_command git pull
         fi
-        cd $pw
+        cd "$pw"
     fi
     (cd "$where"
         echo HEAD in `pwd` is:
