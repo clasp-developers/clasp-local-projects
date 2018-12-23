@@ -12,6 +12,6 @@ clone:
 	./fetch-git-revision.sh ../cl-ipywidgets https://github.com/clasp-developers/cl-ipywidgets.git origin/master
 	./fetch-git-revision.sh ../cl-nglview https://github.com/clasp-developers/cl-nglview.git origin/master
 	./fetch-git-revision.sh ../cl-bqplot https://github.com/clasp-developers/cl-bqplot.git origin/master
-	./fetch-git-revision.sh ../trivial-backtrace.git https://github.com/clasp-developers/trivial-backtrace.git origin/master
+	./fetch-git-revision.sh ../trivial-backtrace https://github.com/clasp-developers/trivial-backtrace origin/master
 
 
