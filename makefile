@@ -3,7 +3,6 @@
 clone:
 	./fetch-git-revision.sh ../trivial-garbage https://github.com/clasp-developers/trivial-garbage.git origin/master
 	./fetch-git-revision.sh ../bordeaux-threads https://github.com/clasp-developers/bordeaux-threads.git origin/master
-	./fetch-git-revision.sh ../cffi https://github.com/clasp-developers/cffi.git origin/master
 	./fetch-git-revision.sh ../usocket https://github.com/clasp-developers/usocket.git origin/master
 	./fetch-git-revision.sh ../uuid https://github.com/clasp-developers/uuid.git origin/master
 	./fetch-git-revision.sh ../cl-netcdf https://github.com/clasp-developers/cl-netcdf.git origin/master
